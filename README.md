@@ -1,2 +1,3 @@
-# THC-website
- Thaiwahclub website development
+# Team 05 - Create Best Website Ever ? 
+
+ThaiwahClub
