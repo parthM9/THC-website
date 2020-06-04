@@ -1,3 +1,3 @@
-# Team 05 - Create Best Website Ever ? 
+# Team 05 - 
 
 ThaiwahClub
