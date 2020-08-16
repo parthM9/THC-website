@@ -27,66 +27,52 @@
            </div>
        </div>
        <div class="row">
-           <div class="col-xl-4 col-md-4">
-               <div class="single_service text-center wow fadeInLeft" data-wow-duration="1.2s"
-                   data-wow-delay=".4s">
-                   <div class="icon">
-                       <img src="<?php bloginfo('template_directory');?>/img/svg_icon/1.svg" alt="">
-                   </div>
-                   <h3>Graphic design</h3>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
-               </div>
-           </div>
-           <div class="col-xl-4 col-md-4">
-               <div class="single_service text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                   <div class="icon">
-                       <img src="<?php bloginfo('template_directory');?>/img/svg_icon/2.svg" alt="">
-                   </div>
-                   <h3>Web design</h3>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
-               </div>
-           </div>
-           <div class="col-xl-4 col-md-4">
-               <div class="single_service text-center wow fadeInRight" data-wow-duration="1.2s"
-                   data-wow-delay=".4s">
-                   <div class="icon">
-                       <img src="<?php bloginfo('template_directory');?>/img/svg_icon/3.svg" alt="">
-                   </div>
-                   <h3>Mobile app</h3>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
-               </div>
-           </div>
-       </div>
+         <?php
+         $category_args=array(
+           'post_type' => 'category',
+           'posts_per_page'=>6
+         );
+         $category_posts=new WP_Query($category_args);
+         while($category_posts -> have_posts()){
+           $category_posts->the_post();
+         ?>
+         <div class="col-xl-4 col-md-4">
+             <div class="single_service text-center wow fadeInLeft" data-wow-duration="1.2s"
+                 data-wow-delay=".4s">
+                 <div class="icon">
+                     <?php the_post_thumbnail()?>
+                 </div>
+                 <h3><?php the_title()?></h3>
+              <?php the_excerpt()?>
+             </div>
+         </div>
+       <?php }?>
+       <?php wp_reset_postdata()?>
+
+
        <div class="row">
-           <div class="col-xl-4 col-md-4">
-               <div class="single_service text-center wow fadeInLeft" data-wow-duration="1.2s"
-                   data-wow-delay=".4s">
-                   <div class="icon">
-                       <img src="<?php bloginfo('template_directory');?>/img/svg_icon/1.svg" alt="">
-                   </div>
-                   <h3>Graphic design</h3>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
-               </div>
-           </div>
-           <div class="col-xl-4 col-md-4">
-               <div class="single_service text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                   <div class="icon">
-                       <img src="<?php bloginfo('template_directory');?>/img/svg_icon/2.svg" alt="">
-                   </div>
-                   <h3>Web design</h3>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
-               </div>
-           </div>
-           <div class="col-xl-4 col-md-4">
-               <div class="single_service text-center wow fadeInRight" data-wow-duration="1.2s"
-                   data-wow-delay=".4s">
-                   <div class="icon">
-                       <img src="<?php bloginfo('template_directory');?>/img/svg_icon/3.svg" alt="">
-                   </div>
-                   <h3>Mobile app</h3>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
-               </div>
-           </div>
+         <?php
+         $category_args=array(
+           'post_type' => 'category',
+           'posts_per_page'=>6
+         );
+         $category_posts=new WP_Query($category_args);
+         while($category_posts -> have_posts()){
+           $category_posts->the_post();
+         ?>
+         <div class="col-xl-4 col-md-4">
+             <div class="single_service text-center wow fadeInLeft" data-wow-duration="1.2s"
+                 data-wow-delay=".4s">
+                 <div class="icon">
+                     <?php the_post_thumbnail()?>
+                 </div>
+                 <h3><?php the_title()?></h3>
+              <?php the_excerpt()?>
+             </div>
+         </div>
+       <?php }?>
+       <?php wp_reset_postdata()?>
+
        </div>
    </div>
 </div>
@@ -298,62 +284,4 @@
 
 
 
-<footer class="footer-area section-padding">
-   <div class="container">
-       <div class="row">
-           <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.2s">
-               <div class="widget">
-                   <h5 class="widget-title">Connect with our social media</h5>
-                   <ul class="footer-social">
-                       <h3>Connect with us </h3>
-                       <li><a class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s" href="#"> <i
-                                   class="fa fa-facebook"></i> </a></li>
-                       <li><a class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s" href="#"> <i
-                                   class="fa fa-twitter"></i> </a></li>
-                       <li><a class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s" href="#"> <i
-                                   class="fa fa-instagram"></i> </a></li>
-                       <li><a class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s" href="#"> <i
-                                   class="fa fa-google-plus"></i> </a></li>
-
-                   </ul>
-               </div>
-           </div>
-           <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">
-
-           </div>
-           <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.6s">
-               <h3>Thai Wah Club </h3>
-               <ul>
-                   <li><a href="#">About Us</a></li>
-                   <li><a href="#">Help</a></li>
-                   <li><a href="#">Blog</a></li>
-                   <li><a href="#">Classifieds</a></li>
-                   <li><a href="#">Accommodation</a></li>
-                   <li><a href="#">Scholarships</a></li>
-                   <li><a href="#"> Working Holidays</a></li>
-               </ul>
-           </div>
-
-           <div class="widget">
-               <h3>Other Sites</h3>
-               <ul>
-                   <li><a href="#">Beyond Study Center
-                       </a></li>
-
-               </ul>
-               <br>
-               <h3>About This Site</h3>
-               <ul>
-                   <li><a href="#">Sitemap</a></li>
-                   <li><a href="#">Privacy Policy</a></li>
-                   <li><a href="#"> Terms and Conditions</a></li>
-
-
-
-
-               </ul>
-           </div>
-       </div>
-   </div>
-   </div>
 <?php get_footer();?>

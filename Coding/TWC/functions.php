@@ -1,7 +1,11 @@
 <?php
 
 
-
+add_theme_support('custom-logo');
+add_theme_support('title-tag');
+add_theme_support('post-thumbnails');
+//add_image_size();  if we need later on
+add_theme_support('automatic-feed-links');
 
 function load_stylesheets()
 {
@@ -105,4 +109,35 @@ register_nav_menus(
   )
 );
 
+function footer_widgets(){
+  register_sidebar(array(
+    'name' => __('Footer Widget 1','TWC'),
+    'id' => 'footer-1',
+    'before_widget' => '<div class="widget">',
+    'after_widget' => '</div>',
+    'before_title' => '<h5 class="widget-title">Connect with our social media',
+    'after_title' => '</h5>',
+  ));
+  register_sidebar(array(
+    'name' => __('Footer Widget 2','TWC'),
+    'id' => 'footer-2',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>',
+  ));
+  register_sidebar(array(
+    'name' => __('Footer Widget 3','TWC'),
+    'id' => 'footer-3',
+    'before_widget' => '<div class="widget">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>',
+  ));
+}
+add_action('widgets_init','footer_widgets');
+
+require get_template_directory().'/category.php';
+
+require get_template_directory().'/category2.php';
 ?>
