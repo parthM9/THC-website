@@ -22,7 +22,7 @@
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo-img">
                                 <a href="index.html">
-                                    <img src="<?php bloginfo('template_directory');?>/img/twhlogofin1.png" alt="">
+                                  <?php the_custom_logo()?>
                                     <!-- add your logo here -->
                                 </a>
                             </div>

@@ -111,6 +111,30 @@ register_nav_menus(
 
 function footer_widgets(){
   register_sidebar(array(
+    'name' => __('Blog Widget 1','TWC'),
+    'id' => 'blog-1',
+    'before_widget' => '<aside class="single_sidebar_widget search_widget">',
+    'after_widget' => '</aside>',
+    'before_title' => '  <div class="input-group-append">',
+    'after_title' => '</div>',
+  ));
+  register_sidebar(array(
+    'name' => __('Blog Widget 2','TWC'),
+    'id' => 'blog-2',
+    'before_widget' => '<aside class="single_sidebar_widget post_category_widget">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h4 class="widget_title">',
+    'after_title' => '</h4>',
+  ));
+  register_sidebar(array(
+    'name' => __('Blog Widget 3','TWC'),
+    'id' => 'blog-3',
+    'before_widget' => '<aside class="single_sidebar_widget popular_post_widget">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h3 class="widget_title">',
+    'after_title' => '</h3>',
+  ));
+  register_sidebar(array(
     'name' => __('Footer Widget 1','TWC'),
     'id' => 'footer-1',
     'before_widget' => '<div class="widget">',
@@ -140,4 +164,6 @@ add_action('widgets_init','footer_widgets');
 require get_template_directory().'/category.php';
 
 require get_template_directory().'/category2.php';
+require get_template_directory().'/aboutusPost.php';
+require get_template_directory().'/faq.php';
 ?>

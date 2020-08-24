@@ -35,48 +35,30 @@ get_header();
 <section id="about" data-stellar-background-ratio="0.5">
     <div class="container">
          <div class="row">
-
-              <div class="col-md-6 col-sm-6">
-                   <div class="about-info">
-                        <div class="section-title">
-                             <h2>Who Are We?</h2>
-                             <span class="line-bar">...</span>
-                        </div>
-                        <p class="desc">Here's where you can explain what your company does
-                            and who you serve. You might even include a short
-                            sentence about your mission and values.
-                            But don't forget to mention that your company is only
-                            as good as its dedicated and creative staf
-
-                            Here's where you can explain what your company does
-                            and who you serve. You might even include a short
-                            sentence about your mission and values.
-                            But don't forget to mention that your company is only
-                            as good as its dedicated and creative staf</p>
-                        <p></p>
-                   </div>
-              </div>
-
-              <div class="col-md-6 col-sm-6">
+           <?php
+           $Aboutus_args=array(
+             'post_type' => 'Aboutus',
+             'posts_per_page'=>6
+           );
+           $Aboutus_posts=new WP_Query($Aboutus_args);
+           while($Aboutus_posts -> have_posts()){
+             $Aboutus_posts->the_post();
+           ?>
+           <div class="col-md-6 col-sm-6">
                 <div class="about-info">
-                    <div class="section-title">
-                         <h2>What We Stand For?</h2>
-                         <span class="line-bar">...</span>
-                    </div>
-                    <p class="desc">Here's where you can explain what your company does
-                        and who you serve. You might even include a short
-                        sentence about your mission and values.
-                        But don't forget to mention that your company is only
-                        as good as its dedicated and creative staf
+                     <div class="section-title">
+                          <h2><?php the_title()?></h2>
+                          <span class="line-bar">...</span>
+                     </div>
+                     <?php the_content()?>
+                     <p></p>
+                </div>
+           </div>
+         <?php }?>
+         <?php wp_reset_postdata()?>
 
-                        Here's where you can explain what your company does
-                        and who you serve. You might even include a short
-                        sentence about your mission and values.
-                        But don't forget to mention that your company is only
-                        as good as its dedicated and creative staf.</p>
-                    <p></p>
-               </div>
-              </div>
+
+
          </div>
     </div>
 </section>

@@ -28,11 +28,11 @@
        </div>
        <div class="row">
          <?php
-         $category_args=array(
+         $FAQ_args=array(
            'post_type' => 'category',
            'posts_per_page'=>6
          );
-         $category_posts=new WP_Query($category_args);
+         $FAQ_posts=new WP_Query($category_args);
          while($category_posts -> have_posts()){
            $category_posts->the_post();
          ?>
@@ -76,7 +76,7 @@
        </div>
    </div>
 </div>
-
+<?php //This next Social section is supposed to be updated via plugin so leaving it for now and not cusomizing it ?>
 <section id="about" class="section-padding">
    <div class="container">
        <div class="row">
